@@ -4,28 +4,31 @@ from bs4 import BeautifulSoup
 class Scraper():
     def __init__(self):
         self.items_per_page = 6
+        self.links = []
         self.data = []
 
-    def get_adverts_links(self, URL, number_of_pages):
-        links = []
+    def get_adverts_links(self, URL, number_of_pages=0):
+        if number_of_pages > 0:
+            for current_page in range(number_of_pages):
+                session = HTMLSession()
+                page = session.get(URL)
+                soup = BeautifulSoup(page.html.html, "html.parser")
 
-        for current_page in range(number_of_pages):
-            session = HTMLSession()
-            page = session.get(URL)
-            soup = BeautifulSoup(page.html.html, "html.parser")
+                advert_link_prefix = "https://freelancer.homejobonline.in/index.php/all-adverts/advert/"
+                connector = "?start="
 
-            advert_link_prefix = "https://freelancer.homejobonline.in/index.php/all-adverts/advert/"
-            connector = "?start="
+                links_on_current_page = [advert_link_prefix + str(x["onclick"][56:-1]) for x in soup.findAll("img", {"itemprop": "image"})]
 
-            links_on_current_page = [advert_link_prefix + str(x["onclick"][56:-1]) for x in soup.findAll("img", {"itemprop": "image"})]
+                URL = str(URL + connector + str(self.items_per_page*(current_page+1)))
 
-            URL = str(URL + connector + str(self.items_per_page*(current_page+1)))
+                self.links.extend(links_on_current_page)
 
-            links.extend(links_on_current_page)
+        else:
+            self.links = [URL]
 
-        return links
+        return self.links
 
-    def scrape_adverts_data(self, URL, number_of_pages):
+    def get_adverts_data(self, URL, number_of_pages=0):
         for link in self.get_adverts_links(URL, number_of_pages):
             session = HTMLSession()
             page = session.get(link)
@@ -73,10 +76,27 @@ class Scraper():
 
             self.data.append({**details_dict, **more_details_dict, **image_urls_dict})
 
-scraper = Scraper()
-scraper.scrape_adverts_data(
-    URL="https://freelancer.homejobonline.in/index.php/category/31",
-    number_of_pages=2
-)
+        return self.data
 
-print(scraper.data)
+scraper = Scraper()
+
+# print(
+#     scraper.get_adverts_links(
+#         URL="https://freelancer.homejobonline.in/index.php/category/31",
+#         number_of_pages=10
+#     )
+# )
+#
+# print(
+#     scraper.get_adverts_data(
+#         URL="https://freelancer.homejobonline.in/index.php/category/31",
+#         number_of_pages=10
+#     )
+# )
+
+# scraper.data will have a single adverts data
+print(
+    scraper.get_adverts_data(
+        URL="https://freelancer.homejobonline.in/index.php/all-adverts/advert/83797-2016-toyota-calya-g-1-3-at-matic-silver-terawat-dan-termurah-tinggal-jalan-bukan-bekas-tabrak-banjir-siap-pakai"
+    )
+)
