@@ -1,0 +1,44 @@
+{
+    "title": "Yamaha Aerox S Version"
+    "category[]": "6"
+    "category[]": "32"
+    "category[]": "33"
+
+    "exf_26": "Negotiable"
+    "exf_27": "2017"
+    "exf_28": "155cc"
+    "exf_29": "21000 Km"
+    "exf_31": "Petrol"
+    "exf_32": "White"
+    "exf_33": "S Version"
+    "exf_34": "C-ID-01919307"
+    "exf_35": "85503"
+
+    "exf_36": https://freelancer.homejobonline.in/media/com_jomclassifieds/items/85503/upload_5fe07410399ec4.03965093_gallery.jpg'
+    "exf_37": https://freelancer.homejobonline.in/media/com_jomclassifieds/items/85503/upload_5fe0740d46dfe1.55867128_gallery.jpg'
+    "exf_38": https://freelancer.homejobonline.in/media/com_jomclassifieds/items/85503/upload_5fe0740a0f5382.34938604_gallery.jpg'
+    "exf_39": https://freelancer.homejobonline.in/media/com_jomclassifieds/items/85503/upload_5fe07412dda888.50734014_gallery.jpg'
+    "exf_40": https://freelancer.homejobonline.in/media/com_jomclassifieds/items/85503/upload_5fe0740a0f5382.34938604_gallery.jpg'
+
+    "exf_42": "Automatic"
+
+    "price": "20"
+    "currency":  "Millions"
+    "tagid": "1"
+    "description": "<p>KM 21.000<br />Tahun 2017<br />Tangan Pertama<br />PLAT BH ( JAMBI )<br />MINUS : BAN BELUM PERNAH GANTI<br /><br /><br /><br />Kendaraan ini dijual di Carmudi dengan harga yang bersaing dan kondisi yang berkualitas. Hubungi langsung penjual melalui detail kontak di sisi kanan laman ini, untuk mengetahui lebih detil kondisi kendaraan saat ini.<br /><br />Anda bisa menanyakan sejauh apa jarak tempuh pada odometer kendaraan, seperti apa kondisi mesin, interior (jika mobil), bodi, kaki-kaki, riwayat servis dan pemakaian serta kelengkapan surat-surat dan juga apa saja pilihan pembayaran yang ditawarkan.<br /><br />Jangan lupa periksa seluruh foto kendaraan dengan baik untuk membuat Anda semakin yakin sebelum bertemu dengan penjualnya.<br /><br />Carmudi sangat menyarankan Anda untuk memastikan kembali kondisi mobil dengan melihat secara langsung dan bertemu si penjual sebelum Anda melakukan transaksi.<br /><br />(Klik 'Lihat No Telepon’ untuk mengetahui nomor telepon kontak person atau gunakan fitur Whatsapp untuk chat langsung kepada penjual nya!)</p>"
+    "address": "."
+    "location[]": "33"
+
+    "topaddays":" "
+    "privacy[]": "on"
+    "mode": "new"
+    "extImages":" "
+
+    "userid": "1131"
+    "id": "54588"
+
+    "latitude":" "
+    "langtitude":" "
+    "defLocation": "USA"
+    "7d3479d3294d40d3e0bc24756b522bd5": "1",
+}
