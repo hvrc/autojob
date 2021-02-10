@@ -92,6 +92,7 @@ class Scraper():
             self.data.append({**details_dict, **more_details_dict, **image_urls_dict})
 
         self.data[0]["title"] = self.data[0].pop("Title")
+        self.data[0]["price"] = self.data[0].pop("Price")
         self.data[0]["exf_26"] = self.data[0].pop("Price Final Status")
         self.data[0]["exf_27"] = self.data[0].pop("Year")
         self.data[0]["exf_28"] = self.data[0].pop("Engine Size")
