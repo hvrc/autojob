@@ -16,7 +16,7 @@ with open("../links.txt", "r") as f:
     links_list = [line.strip() for line in f]
 
 for link in links_list:
-
+    print(link + "\n")
     session = HTMLSession()
 
     # POST LOG IN FORM
@@ -60,6 +60,6 @@ for link in links_list:
     post_ad_url = urljoin(post_ad_url, post_ad_form_details["action"])
     res = session.post(post_ad_url, data=advert_data)
 
-    print(str(advert_data[0][1]) + ": Advert Posted!")
+    print(str(advert_data[0][1]) + ": Advert Posted!\n")
 
-    # print(res)
+    print("-------------X-------------X-------------X-------------X-------------\n")
