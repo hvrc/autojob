@@ -5,5 +5,3 @@ then
     pip3 install -r requirements.txt
 else
     . venv/bin/activate
-fi
-cd scripts
