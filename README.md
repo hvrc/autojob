@@ -1,6 +1,6 @@
 # autojob
 
-### Running the script
+### Cloning repo and setting up venv
 
 clone and run the shell script on a mac
 ```
@@ -16,6 +16,7 @@ $ bash run.sh
 > start run.bat
 ```
 
+### Running the script
 run scripts/auto_link_fetcher.py to add links to database/links_to_post.txt,
 ```
 $ python3 auto_link_fetcher.py
