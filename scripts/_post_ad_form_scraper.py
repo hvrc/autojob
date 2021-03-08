@@ -1,3 +1,4 @@
+from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
 def get_form(url, id=None):
