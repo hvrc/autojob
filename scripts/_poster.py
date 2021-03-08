@@ -19,7 +19,7 @@ def login():
             key, value = line.split()
             login_data[key] = value
 
-    login_form = get_form(session, login_url)
+    login_form = get_form(login_url)
     login_form_details = get_form_details(login_form)
 
     for input_tag in login_form_details["inputs"]:
@@ -37,7 +37,7 @@ def post_advert(link):
     post_ad_form = get_form(post_ad_url, id="jomclForm")
     post_ad_form_details = get_form_details(post_ad_form)
 
-    advert_data = get_advert_data(session, link)
+    advert_data = get_advert_data(link)
 
     for input_tag in post_ad_form_details["inputs"]:
         if input_tag["type"] == "hidden":
