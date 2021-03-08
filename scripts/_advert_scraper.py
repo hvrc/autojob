@@ -1,7 +1,7 @@
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
-def get_advert_data(session, link):
+def get_advert_data(link):
     exf_dict = {
         "exf_26": "Price Final Status",
         "exf_27": "Year",
@@ -14,7 +14,7 @@ def get_advert_data(session, link):
         "exf_42": "Transmission",
     }
 
-    # session = HTMLSession()
+    session = HTMLSession()
     page = session.get(link)
     soup = BeautifulSoup(page.html.html, "html.parser")
 
