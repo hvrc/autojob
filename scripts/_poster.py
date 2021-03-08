@@ -8,7 +8,8 @@ from requests_html import HTMLSession
 import time
 
 # posts login form
-def login(session):
+def login():
+    session = HTMLSession()
     login_url = "http://newfreelancerportal.onlinecopypastejob.com/index.php/login"
     login_data_path = "../database/login.txt"
     login_data = {}
@@ -29,7 +30,8 @@ def login(session):
     res = session.post(login_url, data=login_data)
 
 # posts advert form
-def post_advert(session, link):
+def post_advert(link):
+    session = HTMLSession()
     post_ad_url = "http://newfreelancerportal.onlinecopypastejob.com/index.php/post-free-ad"
     success_response = lambda string : str(string) + " - Advert Posted!"
     post_ad_form = get_form(session, post_ad_url, id="jomclForm")
@@ -55,7 +57,7 @@ def post(link):
     error_1_response = "This advert has already been posted!"
     error_2_repsonse = "Error! Link added to recycle list..."
 
-    session = HTMLSession()
+#     session = HTMLSession()
 
     # if links has already been posted
     # TODO: populate links_archive.txt with adverts manually posted by T
@@ -64,8 +66,8 @@ def post(link):
 
     else:
 #         try:
-        login(session)
-        response = post_advert(session, link)
+        login()
+        response = post_advert(link)
         # adds posted link to links_archive.txt
         archive_link(link)
 
