@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 
-def get_form(session, url, id=None):
+def get_form(url, id=None):
+    session = HTMLSession()
     res = session.get(url)
     # res.html.render()
     soup = BeautifulSoup(res.html.html, "html.parser")
