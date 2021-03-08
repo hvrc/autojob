@@ -11,7 +11,8 @@ def get_form(url, id=None):
 
 def get_form_details(form):
     inputs, details = [], {}
-    action, method = form.attrs.get("action").lower(), form.attrs.get("method", "get").lower()
+    action = form.attrs.get("action").lower()
+    method = form.attrs.get("method", "get").lower()
 
     for input_tag in form.find_all("input"):
         input_type = input_tag.attrs.get("type", "text")
