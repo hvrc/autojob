@@ -34,7 +34,7 @@ def post_advert(link):
     session = HTMLSession()
     post_ad_url = "http://newfreelancerportal.onlinecopypastejob.com/index.php/post-free-ad"
     success_response = lambda string : str(string) + " - Advert Posted!"
-    post_ad_form = get_form(session, post_ad_url, id="jomclForm")
+    post_ad_form = get_form(post_ad_url, id="jomclForm")
     post_ad_form_details = get_form_details(post_ad_form)
 
     advert_data = get_advert_data(session, link)
