@@ -63,16 +63,16 @@ def post(link):
         response = error_1_response
 
     else:
-        try:
-            login(session)
-            response = post_advert(session, link)
-            # adds posted link to links_archive.txt
-            archive_link(link)
+#         try:
+        login(session)
+        response = post_advert(session, link)
+        # adds posted link to links_archive.txt
+        archive_link(link)
 
-        except:
-            response = error_2_repsonse
-            # adds link to links_to_recycle.txt
-            recycle_link(link)
+#         except:
+#             response = error_2_repsonse
+#             # adds link to links_to_recycle.txt
+#             recycle_link(link)
 
     timer_end = time.time()
     elapsed_time_reponse = "Finished in " + str(round(timer_end - timer_start, 2)) + " seconds"
